@@ -1,0 +1,23 @@
+<!-- <div class="input-wrapper">
+  <input type="text" placeholder="Search..." [(ngModel)]="chatBox" (change)="onChange($event)">
+  <input type="text" placeholder="Search..." [(ngModel)]="chatBox" (change)="send()">
+  <span class="input-highlight">
+    {{ chatBox }}
+  </span>
+</div> -->
+
+<form action="">
+  <div class="input-wrapper">
+    <input type="text" placeholder="Search..." [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}">
+    <span class="input-highlight">
+      {{ chatBox }}
+    </span>
+  </div>
+  <button (click)="send()">Send</button>
+</form>
+
+<ul>
+  <li *ngFor="let message of messages">
+    <span [innerHTML]="isSystemMessage(message)"></span>
+  </li>
+</ul>
