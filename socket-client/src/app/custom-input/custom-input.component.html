@@ -8,7 +8,7 @@
 
 <form action="">
   <div class="input-wrapper">
-    <input type="text" placeholder="Search..." [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}">
+    <input type="text" placeholder="Message..." [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}">
     <span class="input-highlight">
       {{ chatBox }}
     </span>
@@ -18,6 +18,9 @@
 
 <ul>
   <li *ngFor="let message of messages">
-    <span [innerHTML]="isSystemMessage(message)"></span>
+    <span class="response" [innerHTML]="isSystemMessage(message) | textFormat"></span>
+    <!-- <span class="response">
+      {{ message | textFormat}}
+    </span> -->
   </li>
 </ul>

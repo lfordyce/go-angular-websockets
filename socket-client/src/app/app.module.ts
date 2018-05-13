@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 
 import { SocketService } from './socket.service';
+import { TextFormatPipe } from './text-format.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomInputComponent
+    CustomInputComponent,
+    TextFormatPipe
   ],
   imports: [
     BrowserModule,

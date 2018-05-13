@@ -43,6 +43,9 @@ export class CustomInputComponent implements OnInit, OnDestroy {
   public send() {
     if (this.chatBox) {
       this.socket.send(this.chatBox);
+
+      // this.messages.push(this.chatBox);
+
       this.chatBox = '';
     }
   }
@@ -56,5 +59,4 @@ export class CustomInputComponent implements OnInit, OnDestroy {
     this.chatBox = event.target.value;
     // this.value = '';
   }
-
 }
